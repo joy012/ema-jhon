@@ -25,7 +25,7 @@ const Review = () => {
         const savedCart = getDatabaseCart(); //every key is set as a property inside this object
         const productKeys = Object.keys(savedCart); //return a array of the keys
 
-        fetch('http://localhost:3200/productByKey', {
+        fetch('https://ema-jhon-server.herokuapp.com/productByKey', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify(productKeys)

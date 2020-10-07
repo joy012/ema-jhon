@@ -13,7 +13,7 @@ const Shipment = () => {
       orderDetails.name = loggedInUser.name;
       orderDetails.email = loggedInUser.email;
 
-      fetch('http://localhost:3200/addOrder', {
+      fetch('https://ema-jhon-server.herokuapp.com/addOrder', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: JSON.stringify(orderDetails)
