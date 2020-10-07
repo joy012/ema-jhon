@@ -1,0 +1,15 @@
+.cart{
+    text-align: center;
+    margin-left: 5px;
+}
+.cart-table{
+    font-size: 12px;
+    text-align: left;
+    margin: auto;
+}
+.total-cost{
+    color: crimson;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+}
