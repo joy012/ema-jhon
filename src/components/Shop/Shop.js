@@ -57,14 +57,13 @@ const Shop = () => {
     }
 
     const handleSearch = event => {
-        setSearch(event.target.parentNode.childNodes[0].value);
+        setSearch(event.target.value);
     }
     const totalItem = cart.reduce((total, product) => total + product.quantity, 0);
     return (
         <div className="twin-container">
             <div style={{textAlign:'center', margin: '20px 20px'}}>
-                <input type="text"/>
-                <button onClick={handleSearch}>Search</button>
+                <input onBlur={handleSearch} type="text"/>
             </div>
             <div className="product-container">
                 {
