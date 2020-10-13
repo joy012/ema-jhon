@@ -19,6 +19,7 @@ const Review = () => {
         setCart(updatedCart);
         removeFromDatabaseCart(productKey);
     }
+    document.title = "Ema Jhon: Review";
 
     useEffect(() => {
         // cart

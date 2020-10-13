@@ -5,16 +5,19 @@ import Cart from '../Cart/Cart';
 import { addToDatabaseCart, getDatabaseCart } from '../../utilities/databaseManager';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { CircularProgress } from '@material-ui/core';
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
+    const [search, setSearch] = useState('');
+    document.title = 'Ema Jhon: Shop';
     
     useEffect(() => {
-        fetch('https://ema-jhon-server.herokuapp.com/products')
+        fetch('https://ema-jhon-server.herokuapp.com/products?search='+search)
         .then(res => res.json())
         .then(data => setProducts(data))
-    }, [])
+    }, [search])
 
     useEffect(() => {
         const savedCart = getDatabaseCart();
@@ -52,10 +55,21 @@ const Shop = () => {
         setCart(newCart);
         addToDatabaseCart(product.key, count);
     }
+
+    const handleSearch = event => {
+        setSearch(event.target.parentNode.childNodes[0].value);
+    }
     const totalItem = cart.reduce((total, product) => total + product.quantity, 0);
     return (
         <div className="twin-container">
+            <div style={{textAlign:'center', margin: '20px 20px'}}>
+                <input type="text"/>
+                <button onClick={handleSearch}>Search</button>
+            </div>
             <div className="product-container">
+                {
+                    products.length === 0 && <CircularProgress className="center" />
+                }
                 {
                     products.map(product => <Product handleAddProduct={handleAddProduct} key={product.key} showAddBtn={true} product={product}>
                     </Product>)

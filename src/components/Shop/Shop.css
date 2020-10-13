@@ -6,8 +6,17 @@
     margin-left: 180px;
     margin-right: 5px;
     border-right: 1px solid lightgrey;
+    position: relative;
 }
 .cart-container{
     width: 20%;
     text-align: center;
+}
+.center{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }

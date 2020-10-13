@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const Inventory = () => {
-
+    document.title = "Ema Jhon: Inventory";
     const handleAddProduct = () => {
         const product = {};
         fetch('https://ema-jhon-server.herokuapp.com/addProduct', {
