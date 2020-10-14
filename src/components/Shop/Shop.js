@@ -10,7 +10,7 @@ import { CircularProgress } from '@material-ui/core';
 const Shop = () => {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
-    const [search, setSearch] = useState('');
+    const [search, setSearch] = useState(null);
     document.title = 'Ema Jhon: Shop';
     
     useEffect(() => {
